@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+.coll {
+
+  height: 100%;
+  width: 33.333%; /* Можно задать любую другую ширину блока */
+  background: grey;
+  margin: .5rem;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+.roww {
+--bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+    }
+
+
+
+

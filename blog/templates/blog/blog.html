@@ -1,0 +1,13 @@
+
+<a href = "{% url 'home' %}"><h1>Главная</h1></a>
+<a href = "{% url 'blog/' %}"><h1>Блог</h1></a>
+<br>
+Text from dictionary
+{{ posts }}
+{{ test }}
+{{ blogs }}
+{{ projects }}
+
+{% for post in posts %}
+{{ post.tittle }}
+{% endfor %}

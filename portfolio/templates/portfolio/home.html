@@ -1,0 +1,44 @@
+
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+
+{% load static %}
+
+<h1>
+<p style="text-align: center;">
+  Это мое резюме
+</p>
+</h1>
+<br>
+<p style="text-align: center;">
+<img src = "{% static 'MG8149.jpg' %}" height="550 px" weight = "550 px" align = "center" title="Мое фото" class="rounded mx-auto d-block">
+</p>
+<a href = "{% static 'portfolio\stepik-certificate-67-de4220e(1).pdf' %}">
+  <p style="text-align: center;">
+    Ссылка на сертификат
+    </p>
+  </a>
+<br>
+
+<div id="parent" class="row">
+{% for project in projects %}
+
+    <div class="col-4">
+        <a href = "{% url 'home' %}"> <h3 class="text-center"> {{ project.tittle }} </h3></a>
+        <br>
+        <h5 class="text-center">{{ project.discriptions }}</h5>
+        <br>
+        <img src = "{{ project.image.url }} " wigth='100 px' height='100 px' class="rounded mx-auto d-block">
+        <br>
+
+        {% if project.url %}
+        <a href="{{ project.url }}"> <p class="text-center"> {{ project.url }} </p></a>
+        <a href = "{{ project.url }}"> <p class="text-center">Ссылка указанная в Карточке </p></a>
+        {% endif %}
+    </div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

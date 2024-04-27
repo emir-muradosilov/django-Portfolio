@@ -1,0 +1,26 @@
+
+{% extends 'portfolio\base.html' %}
+{% block content %}
+
+
+<h3>
+  <p style="text-align: center;">
+  Страница блога содержит {{ posts.count }} поста
+  </p>
+</h3>
+<br>
+{% for post in posts %}
+
+<br>
+    <a href = "{{ post.id }}"><h3>
+      <p style="text-align: center;">
+        {{ post.tittle }}
+        </p>
+      </h3></a>
+  </p>
+<p style="text-align: center;">{{ post.date }}</p>
+<p style="text-align: center;">{{ post.descriptions }}</p>
+
+{% endfor %}
+
+{% endblock %}
