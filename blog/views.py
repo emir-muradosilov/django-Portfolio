@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from .models import Posts
 
 
-
 # Create your views here.
 def blog(request):
     posts = Posts.objects.all()
